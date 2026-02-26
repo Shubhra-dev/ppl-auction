@@ -1,6 +1,6 @@
 # PPL Auction Platform
 
-A modern web application for managing the Pakistan Premier League (PPL) player auctions. This platform allows users to browse players and teams while providing administrators with comprehensive tools to manage auction events, players, and bidding in real-time.
+A modern web application for managing the Puia Premier League (PPL) player auctions. This platform allows users to browse players and teams while providing administrators with comprehensive tools to manage auction events, players, and bidding in real-time.
 
 ## Features
 
