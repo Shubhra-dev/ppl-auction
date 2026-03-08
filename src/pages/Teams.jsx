@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../app/supabaseClient";
 import TeamCard from "../components/TeamCard";
 import PlayerCard from "../components/PlayerCard";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 import PlayerRow from "../components/PlayerRow";
 
 export default function Teams() {
@@ -10,6 +12,26 @@ export default function Teams() {
   const [selectedTeamId, setSelectedTeamId] = useState("");
   const [loading, setLoading] = useState(true);
 
+  function downloadTeamPDF() {
+    if (!selectedTeam) return;
+
+    const doc = new jsPDF();
+
+    const rows = selectedTeamPlayers.map((p) => [
+      p.order_no,
+      p.name,
+      p.specialty,
+      p.base_price,
+      p.sold_price,
+    ]);
+
+    autoTable(doc, {
+      head: [["Order", "Name", "Specialty", "Base Price", "Sold Price"]],
+      body: rows,
+    });
+
+    doc.save(`${selectedTeam.name}_players.pdf`);
+  }
   const teamMap = useMemo(() => {
     const map = {};
     for (const t of teams) map[t.id] = t;
@@ -139,6 +161,12 @@ export default function Teams() {
             ))}
           </div>
         )}
+        <button
+          onClick={downloadTeamPDF}
+          className="px-3 py-2 text-xs bg-slate-800 rounded-xl my-4"
+        >
+          Download PDF
+        </button>
       </div>
     </div>
   );

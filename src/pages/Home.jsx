@@ -2,7 +2,54 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../app/supabaseClient";
 import PlayerCard from "../components/PlayerCard";
 import Pagination from "../components/Pagination";
+import Papa from "papaparse";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 import { fetchPlayersPage } from "../services/pagedPlayers";
+// async function downloadCSV() {
+//   const { data } = await supabase
+//     .from("players")
+//     .select("*")
+//     .order("order_no", { ascending: true });
+
+//   const csv = Papa.unparse(data || []);
+
+//   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+//   const url = URL.createObjectURL(blob);
+
+//   const link = document.createElement("a");
+//   link.href = url;
+//   link.download = "players.csv";
+//   link.click();
+// }
+
+async function downloadPDF() {
+  const { data } = await supabase
+    .from("players")
+    .select("*")
+    .order("order_no", { ascending: true });
+
+  const doc = new jsPDF();
+
+  const rows =
+    data?.map((p) => [
+      p.order_no,
+      p.name,
+      p.specialty,
+      p.base_price,
+      p.status,
+      p.sold_price || "",
+    ]) || [];
+
+  autoTable(doc, {
+    head: [
+      ["Order", "Name", "Specialty", "Base Price", "Status", "Sold Price"],
+    ],
+    body: rows,
+  });
+
+  doc.save("players.pdf");
+}
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
@@ -105,7 +152,14 @@ export default function Home() {
           <h1 className="text-2xl font-bold">Players</h1>
           <p className="text-slate-300 text-sm">Auction results update live.</p>
         </div>
-
+        <div className="flex gap-2">
+          <button
+            onClick={downloadPDF}
+            className="px-3 py-2 text-xs bg-slate-800 rounded-xl"
+          >
+            Download PDF
+          </button>
+        </div>
         {/* ✅ Public Search */}
         <div className="w-full sm:w-[320px]">
           <label className="text-xs text-slate-300">Search players</label>
