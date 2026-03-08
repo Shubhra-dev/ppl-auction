@@ -60,7 +60,7 @@ export default function Home() {
 
   // pagination
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(18);
+  const [pageSize, setPageSize] = useState(10);
 
   // ✅ public search
   const [search, setSearch] = useState("");
