@@ -27,7 +27,7 @@ export default function AdminPlayers() {
 
   // pagination + search
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(12);
+  const [pageSize, setPageSize] = useState(10);
   const [search, setSearch] = useState("");
 
   const [form, setForm] = useState(emptyForm);
