@@ -17,6 +17,16 @@ export default function Teams() {
 
     const doc = new jsPDF();
 
+    // ---- Team Name Title ----
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    doc.setFontSize(18);
+    doc.setFont(undefined, "bold");
+
+    doc.text(`${selectedTeam.name} Squad`, pageWidth / 2, 20, {
+      align: "center",
+    });
+
     const rows = selectedTeamPlayers.map((p) => [
       p.order_no,
       p.name,
@@ -26,6 +36,7 @@ export default function Teams() {
     ]);
 
     autoTable(doc, {
+      startY: 30,
       head: [["Order", "Name", "Specialty", "Base Price", "Sold Price"]],
       body: rows,
     });
