@@ -61,7 +61,7 @@ const fixtures = [
     team1: teamByName["PPL Lions"],
     team2: teamByName["PPL Tigers"],
     date: "22 Mar 2026",
-    time: "3:00 PM",
+    time: "2:00 PM",
     venue: "Puia School Field",
   },
   {
@@ -71,7 +71,7 @@ const fixtures = [
     team1: teamByName["PPL Challengers"],
     team2: teamByName["PPL Riders"],
     date: "22 Mar 2026",
-    time: "3:50 PM",
+    time: "2:50 PM",
     venue: "Puia School Field",
   },
   {
@@ -81,7 +81,7 @@ const fixtures = [
     team1: teamByName["PPL Lions"],
     team2: teamByName["PPL Dragons"],
     date: "22 Mar 2026",
-    time: "4:40 PM",
+    time: "3:40 PM",
     venue: "Puia School Field",
   },
   {
@@ -91,7 +91,7 @@ const fixtures = [
     team1: teamByName["PPL Challengers"],
     team2: teamByName["PPL Eagles"],
     date: "22 Mar 2026",
-    time: "5:30 PM",
+    time: "4:30 PM",
     venue: "Puia School Field",
   },
   {
@@ -101,7 +101,7 @@ const fixtures = [
     team1: teamByName["PPL Tigers"],
     team2: teamByName["PPL Dragons"],
     date: "22 Mar 2026",
-    time: "6:20 PM",
+    time: "5:20 PM",
     venue: "Puia School Field",
   },
   {
@@ -111,7 +111,7 @@ const fixtures = [
     team1: teamByName["PPL Riders"],
     team2: teamByName["PPL Eagles"],
     date: "22 Mar 2026",
-    time: "7:10 PM",
+    time: "6:10 PM",
     venue: "Puia School Field",
   },
   {
@@ -131,7 +131,7 @@ const fixtures = [
       logo_url: "",
     },
     date: "22 Mar 2026",
-    time: "8:00 PM",
+    time: "7:00 PM",
     venue: "Puia School Field",
   },
   {
@@ -151,7 +151,7 @@ const fixtures = [
       logo_url: "",
     },
     date: "22 Mar 2026",
-    time: "8:50 PM",
+    time: "7:50 PM",
     venue: "Puia School Field",
   },
   {
@@ -171,7 +171,7 @@ const fixtures = [
       logo_url: "",
     },
     date: "22 Mar 2026",
-    time: "9:40 PM",
+    time: "8:40 PM",
     venue: "Puia School Field",
   },
 ];
