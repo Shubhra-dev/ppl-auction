@@ -128,7 +128,26 @@ export default function Teams() {
       </div>
 
       {/* Teams list */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Mobile dropdown */}
+      <div className="sm:hidden">
+        <label className="text-sm text-slate-300 block mb-2">Select Team</label>
+
+        <select
+          value={selectedTeamId}
+          onChange={(e) => setSelectedTeamId(e.target.value)}
+          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm"
+        >
+          {/* <option value="">-- Select a team --</option> */}
+          {teams.map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Desktop grid */}
+      <div className="hidden sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {teams.map((t) => (
           <button
             key={t.id}
