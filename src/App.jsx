@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
 import Teams from "./pages/Teams";
 import Live from "./pages/Live";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import GuardAdmin from "./components/GuardAdmin";
+import Fixture from "./pages/Fixture";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
 
       <div className="mx-auto max-w-6xl px-4 py-6">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Fixture />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/live" element={<Live />} />
 

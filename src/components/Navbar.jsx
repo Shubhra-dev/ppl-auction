@@ -40,12 +40,12 @@ export default function Navbar() {
     <div className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <Link to="/" className="font-bold tracking-tight">
-          PPL Auction
+          PPL
         </Link>
 
         <div className="flex items-center gap-2">
           <NavLink to="/" className={navClass}>
-            Players
+            Fixture
           </NavLink>
           <NavLink to="/teams" className={navClass}>
             Teams
