@@ -50,9 +50,9 @@ export default function Navbar() {
           <NavLink to="/teams" className={navClass}>
             Teams
           </NavLink>
-          <NavLink to="/live" className={navClass}>
+          {/* <NavLink to="/live" className={navClass}>
             Live
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/admin" className={navClass}>
             Admin
           </NavLink>
