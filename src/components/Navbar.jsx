@@ -45,7 +45,10 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <NavLink to="/" className={navClass}>
-            Fixture
+            Home
+          </NavLink>
+          <NavLink to="/committee" className={navClass}>
+            Board
           </NavLink>
           <NavLink to="/teams" className={navClass}>
             Teams
